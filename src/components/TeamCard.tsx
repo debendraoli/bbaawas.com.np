@@ -1,4 +1,12 @@
+import { Phone } from "lucide-react";
 import type { TeamMember } from "../types/team";
+import { toNepaliDigits } from "../utils/nepaliDigits";
+
+function formatPhone(phone: string): string {
+  // "+9779857822700" -> "+977 9857822700" -> Devanagari digits
+  const local = phone.replace(/^\+977/, "");
+  return toNepaliDigits(`+977 ${local}`);
+}
 
 function getInitials(name: string): string {
   // Devanagari has no case, so toUpperCase() is a no-op here — it only
@@ -52,6 +60,16 @@ export default function TeamCard({ member, index = 0 }: TeamCardProps) {
       <p className="mt-1 inline-flex rounded-full bg-gold-50 px-3 py-1 text-xs font-medium text-gold-700">
         {member.role}
       </p>
+
+      {member.phone && (
+        <a
+          href={`tel:${member.phone}`}
+          className="mt-3 inline-flex items-center gap-1.5 text-sm text-silver-600 transition-colors hover:text-navy-900"
+        >
+          <Phone className="h-3.5 w-3.5 text-navy-700" aria-hidden="true" />
+          {formatPhone(member.phone)}
+        </a>
+      )}
     </div>
   );
 }

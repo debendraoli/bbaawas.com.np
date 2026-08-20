@@ -4,4 +4,6 @@ export interface TeamMember {
   role: string;
   /** Path to a photo import, or undefined to render an initials avatar */
   photo?: string;
+  /** Direct line, E.164 format e.g. "+9779857822700" */
+  phone?: string;
 }

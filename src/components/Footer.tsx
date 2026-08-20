@@ -121,17 +121,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-navy-800 pt-6 text-xs text-silver-500 sm:flex-row">
-          <p>
+        {/* pr-20 keeps this clear of the fixed WhatsApp/call/back-to-top
+            buttons when scrolled to the very bottom on mobile */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-navy-800 pt-6 pr-20 sm:flex-row sm:pr-0">
+          <p className="text-xs text-silver-500">
             &copy; {year} {site.legalNameNp}। सर्वाधिकार सुरक्षित।
           </p>
           <a
             href="https://apexinfratech.com.np"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-silver-500 transition-colors hover:text-silver-300"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-silver-300 transition-colors hover:text-gold-300"
           >
-            Powered by Apex Infratech Private Limited
+            Powered by
+            <span className="font-semibold text-white">Apex Infratech</span>
           </a>
         </div>
       </div>

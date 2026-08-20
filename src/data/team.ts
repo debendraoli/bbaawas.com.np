@@ -24,23 +24,28 @@ export const team: TeamMember[] = [
     name: "डि.बी. ओली",
     role: "अध्यक्ष",
     photo: resolvePhoto("db-oli.jpg"),
+    phone: "+9779857822700",
   },
   {
     id: "gobinda-oli",
     name: "गोविन्द ओली",
     role: "सदस्य",
     photo: resolvePhoto("gobinda-oli.jpg"),
+    // Same as the main office line (site.phone) — confirm this is intentional.
+    phone: "+9779857846317",
   },
   {
     id: "tilak-oli",
     name: "तिलक ओली",
     role: "सदस्य",
     photo: resolvePhoto("tilak-oli.jpg"),
+    phone: "+9779857834300",
   },
   {
     id: "koli-oli",
     name: "केवली ओली",
     role: "सदस्य",
     photo: resolvePhoto("kwoli-oli.jpg"),
+    phone: "+9779857825800",
   },
 ];
