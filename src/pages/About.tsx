@@ -40,7 +40,7 @@ export default function About() {
         <div className="container-page relative py-16 sm:py-20">
           <SectionHeading
             eyebrow="हाम्रो बारेमा"
-            title="बुद्धभूमि आवास सेवास सेवाको परिचय"
+            title="बुद्धभूमि आवास सेवाको परिचय"
             description={`${site.legalNameNp}, ${site.addressNp}मा आधारित एक सम्पत्ति सल्लाहकार संस्था हो, जसले व्यक्ति र परिवारहरूलाई जिल्लाभर भरपर्दो जग्गा र आवास विकल्प फेला पार्न मद्दत गर्छ।`}
             tone="dark"
           />
@@ -141,7 +141,7 @@ export default function About() {
         <div className="container-page">
           <SectionHeading
             eyebrow="हाम्रो टिम"
-            title="बुद्धभूमि आवास सेवास सेवा पछाडिका व्यक्तित्वहरू"
+            title="बुद्धभूमि आवास सेवा पछाडिका व्यक्तित्वहरू"
             description="वर्षौंको स्थानीय अनुभव बोकेको हाम्रो टिम तपाईंको सेवामा सधैं तत्पर छ।"
             align="center"
           />

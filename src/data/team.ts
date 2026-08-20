@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
   },
   {
     id: "koli-oli",
-    name: "कोली ओली",
+    name: "केवली ओली",
     role: "सदस्य",
     photo: resolvePhoto("kwoli-oli.jpg"),
   },
