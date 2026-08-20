@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* Inter covers Latin; Devanagari codepoints fall through to Noto.
+     Poppins is deliberately NOT used: it ships a Devanagari subset whose
+     digits (U+0966–096F) are drawn as Latin numerals, so "४५" rendered as
+     "45" in headings while body text showed "४५". */
+  --font-sans: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+
+  /* Navy blue — primary brand color, from the logo's outer arc */
+  --color-navy-50: #eef3fb;
+  --color-navy-100: #d9e5f5;
+  --color-navy-200: #b3cbeb;
+  --color-navy-300: #82aadb;
+  --color-navy-400: #4f83c4;
+  --color-navy-500: #2f63a8;
+  --color-navy-600: #1f4c88;
+  --color-navy-700: #1a3d6d;
+  --color-navy-800: #17335a;
+  --color-navy-900: #142a49;
+  --color-navy-950: #0b1a30;
+
+  /* Gold / mustard — accent color, from the logo's outer arc */
+  --color-gold-50: #fdf8e9;
+  --color-gold-100: #faedc2;
+  --color-gold-200: #f5da8a;
+  --color-gold-300: #efc352;
+  --color-gold-400: #e6ab2e;
+  --color-gold-500: #d4941f;
+  --color-gold-600: #b3781a;
+  --color-gold-700: #8f5f18;
+  --color-gold-800: #764e1a;
+  --color-gold-900: #63421a;
+  --color-gold-950: #38230d;
+
+  /* Dark green — secondary accent, from the logo's tree and ribbon */
+  --color-forest-50: #eef7f0;
+  --color-forest-100: #d3ecda;
+  --color-forest-200: #a8d9b6;
+  --color-forest-300: #75bf8c;
+  --color-forest-400: #479f66;
+  --color-forest-500: #2d7f4e;
+  --color-forest-600: #21653f;
+  --color-forest-700: #1c5034;
+  --color-forest-800: #19402c;
+  --color-forest-900: #163526;
+  --color-forest-950: #0a1d15;
+
+  /* Silver / gray — neutral, from the logo's buildings */
+  --color-silver-50: #f8fafc;
+  --color-silver-100: #eef1f5;
+  --color-silver-200: #dde3ea;
+  --color-silver-300: #c3cdd8;
+  --color-silver-400: #9fadbd;
+  --color-silver-500: #7c8ba0;
+  --color-silver-600: #616f83;
+  --color-silver-700: #4d596a;
+  --color-silver-800: #3f4856;
+  --color-silver-900: #363d48;
+  --color-silver-950: #21252c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-silver-50 text-navy-950 font-sans antialiased;
+  }
+
+  /* Devanagari sits lower in the em box than Latin; a bit of extra leading
+     keeps matras and conjuncts from crowding the line above. */
+  :lang(ne) {
+    line-height: 1.7;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Scroll-reveal: elements start hidden and are revealed by useScrollReveal.
+   Anything inside <noscript> or with reduced motion gets the final state. */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+@utility reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
