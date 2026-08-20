@@ -77,8 +77,10 @@ export default function Header() {
               <span className="block font-heading text-base font-bold text-navy-900 sm:text-lg">
                 {site.nameNp}
               </span>
+              {/* Brand name sits above, so show only the entity suffix here —
+                  the full short legal name would just repeat it. */}
               <span className="block text-xs text-silver-600">
-                {site.shortLegalNameNp}
+                {site.entityTypeNp}
               </span>
             </span>
           </NavLink>

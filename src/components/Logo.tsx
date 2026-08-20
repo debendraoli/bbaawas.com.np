@@ -16,7 +16,7 @@ export default function Logo({ variant = "on-light", className = "" }: LogoProps
     return (
       <img
         src={logoSrc}
-        alt="बुद्धभूमिसेवा प्रा.लि. — बुढा भूमि आवास सेवा"
+        alt="बुद्धभूमि आवास सेवा प्रा.लि."
         className={`h-12 w-12 shrink-0 object-contain ${className}`}
       />
     );
@@ -30,7 +30,7 @@ export default function Logo({ variant = "on-light", className = "" }: LogoProps
   return (
     <span
       className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-bold text-sm ${badgeClasses} ${className}`}
-      aria-label="बुद्धभूमिसेवा प्रा.लि. लोगो"
+      aria-label="बुद्धभूमि आवास सेवा प्रा.लि. लोगो"
     >
       BBAS
     </span>

@@ -4,11 +4,16 @@ export const site = {
   domain: "bbawas.com.np",
   url: "https://bbawas.com.np",
 
-  nameNp: "बुढा भूमि आवास सेवा",
-  legalNameNp: "बुद्धभूमिसेवा प्राइभेट लिमिटेड",
-  shortLegalNameNp: "बुद्धभूमिसेवा प्रा.लि.",
-  nameEn: "Budha Bhumi Aawash Sewa",
-  legalNameEn: "Buddhabhumisewa Private Limited",
+  /** Brand name, without the entity suffix */
+  nameNp: "बुद्धभूमि आवास सेवा",
+  /** Full registered name */
+  legalNameNp: "बुद्धभूमि आवास सेवा प्राइभेट लिमिटेड",
+  /** Abbreviated registered name */
+  shortLegalNameNp: "बुद्धभूमि आवास सेवा प्रा.लि.",
+  /** Entity suffix on its own — used where the brand name already precedes it */
+  entityTypeNp: "प्राइभेट लिमिटेड",
+  nameEn: "Buddhabhumi Aawash Sewa",
+  legalNameEn: "Buddhabhumi Aawash Sewa Private Limited",
 
   addressNp: "घोराही–१५, दाङ, नेपाल",
   addressEn: "Ghorahi-15, Dang, Nepal",

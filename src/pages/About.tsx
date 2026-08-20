@@ -1,11 +1,11 @@
+import { Eye, HeartHandshake, Phone, Target } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Target, Eye, HeartHandshake, Phone } from "lucide-react";
-import { team } from "../data/team";
+import SectionHeading from "../components/SectionHeading";
+import TeamCard from "../components/TeamCard";
+import Testimonials from "../components/Testimonials";
 import { stats } from "../data/content";
 import { site } from "../data/site";
-import TeamCard from "../components/TeamCard";
-import SectionHeading from "../components/SectionHeading";
-import Testimonials from "../components/Testimonials";
+import { team } from "../data/team";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const VALUES = [
@@ -40,8 +40,8 @@ export default function About() {
         <div className="container-page relative py-16 sm:py-20">
           <SectionHeading
             eyebrow="हाम्रो बारेमा"
-            title="बुद्धभूमिसेवाको परिचय"
-            description={`${site.legalNameNp} (${site.nameNp}) ${site.addressNp} मा आधारित एक सम्पत्ति सल्लाहकार संस्था हो, जसले व्यक्ति र परिवारहरूलाई जिल्लाभर भरपर्दो जग्गा र आवास विकल्प फेला पार्न मद्दत गर्छ।`}
+            title="बुद्धभूमि आवास सेवास सेवाको परिचय"
+            description={`${site.legalNameNp}, ${site.addressNp}मा आधारित एक सम्पत्ति सल्लाहकार संस्था हो, जसले व्यक्ति र परिवारहरूलाई जिल्लाभर भरपर्दो जग्गा र आवास विकल्प फेला पार्न मद्दत गर्छ।`}
             tone="dark"
           />
         </div>
@@ -141,7 +141,7 @@ export default function About() {
         <div className="container-page">
           <SectionHeading
             eyebrow="हाम्रो टिम"
-            title="बुद्धभूमिसेवा पछाडिका व्यक्तित्वहरू"
+            title="बुद्धभूमि आवास सेवास सेवा पछाडिका व्यक्तित्वहरू"
             description="वर्षौंको स्थानीय अनुभव बोकेको हाम्रो टिम तपाईंको सेवामा सधैं तत्पर छ।"
             align="center"
           />

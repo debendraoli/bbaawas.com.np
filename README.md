@@ -1,6 +1,6 @@
-# Budha Bhumi Aawash Sewa — Website
+# Buddhabhumi Aawash Sewa — Website
 
-Marketing site for **Buddhabhumisewa Private Limited** (बुढा भूमि आवास सेवा), a
+Marketing site for **Buddhabhumi Aawash Sewa Private Limited** (बुद्धभूमि आवास सेवा प्रा.लि.), a
 property consultancy based in Ghorahi-15, Dang, Nepal. Static single-page app
 built with Vite + React + TypeScript + Tailwind CSS v4, deployed to Cloudflare
 Pages at **bbawas.com.np**.
@@ -44,7 +44,6 @@ src/
   utils/          nepaliDigits — ASCII → Devanagari numeral conversion
   types/          Shared TypeScript types
 public/
-  _redirects      Cloudflare Pages SPA fallback (routes all paths to index.html)
   robots.txt      Points crawlers at the sitemap
   sitemap.xml     All routes incl. per-property detail pages
   favicon.png     Generated from the logo
@@ -190,8 +189,24 @@ Subsequent deploys reuse the same command. Wrangler prints the live
 
 ### SPA routing note
 
-This app uses `react-router-dom`'s `BrowserRouter`, which relies on real
-URL paths (e.g. `/properties`, `/about`). `public/_redirects` (copied into
-`dist/` on build) tells Cloudflare Pages to serve `index.html` for any path
-that doesn't match a static file, so deep links and page refreshes on routes
-like `/about` work correctly instead of 404ing.
+This app uses `react-router-dom`'s `BrowserRouter`, which relies on real URL
+paths (e.g. `/properties`, `/properties/:id`). Cloudflare Pages handles this
+automatically: if a deployment has **no top-level `404.html`**, Pages treats
+the project as a single-page app and serves `index.html` for any path that
+doesn't match a static asset. Our 404 is a React route, not a static file, so
+nothing extra is needed and deep links work.
+
+> **Do not add a `_redirects` file with `/* /index.html 200`.** That used to be
+> the documented SPA trick, but Pages now rejects it at deploy time:
+>
+> ```
+> Invalid _redirects configuration:
+>   Line 1: Infinite loop detected in this rule. This would cause a redirect to
+>   strip `.html` or `/index` and end up triggering this rule again. [code: 100324]
+> ```
+>
+> Pages normalizes `/index.html` to `/`, so that rule redirects into itself.
+> The built-in SPA fallback above already covers it.
+>
+> Likewise, **do not add a top-level `public/404.html`** — its presence turns
+> off the SPA fallback and every deep link starts 404ing.
